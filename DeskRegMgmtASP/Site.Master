@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="DeskRegMgmtASP.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Desk Reg Management Home</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body runat="server">
+    <div id ="dimming_panel">
+    <div id="container">
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+ 
+
+        <div id="Header">
+            <div id="bannercontent">
+                <img src="Images/LMCgmg_flush_whGold.png"  width="300" height="70" align="left" hspace="10" vspace="10">
+             
+            </div>
+            <div id="bannernav">DeskReg Management  </div>
+            
+        </div>
+        <div id="mainleft">
+            <ul>
+            <li><a href="Default.aspx">Main Menu</a></li>
+            <li><a href="https://echo.lemoyne.edu/Home">Logout</a></li>
+            </ul>
+        </div>
+
+        <div id="mainright">
+             <p style="margin:1em; font-weight:600">Dimmer Settings</p>
+            <div class="slidecontainer">
+              <input type="range" min="0" max="9" value="0" class ="slider" id="myRange" autocomplete="off">
+              <p style="margin:1em; font-weight:600">Dimmer Value: <span id="demo"></span></p>
+
+                <script type="text/javascript">
+                    if (localStorage.getItem('--background') != null)
+                        document.documentElement.style.setProperty("--background", localStorage.getItem('--background'));
+
+                    var slider = document.getElementById("myRange");
+                    var output = document.getElementById("demo");
+                    const root = document.documentElement;
+
+                    if (localStorage.getItem('--set_value') != null)
+                        slider.value = localStorage.getItem('--set_value');
+
+
+                    slider.addEventListener("input", (e) => {
+                        root.style.setProperty("--background", 'rgba(0, 0, 0, 0.' + e.target.value + ')');
+                        localStorage.setItem('--background', 'rgba(0, 0, 0, 0.' + e.target.value + ')');
+                        localStorage.setItem('--set_value', e.target.value);
+                    });
+
+
+                    output.innerHTML = slider.value; // Display the default slider value
+
+                    // Update the current slider value (each time you drag the slider handle)
+                    slider.oninput = function ()
+                    {
+                        output.innerHTML = this.value;
+                        
+                    }
+
+                  
+                    
+
+
+                </script>
+                
+
+            </div>
+        </div>
+
+
+       
+
+        <div id="maincenter" runat="server">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+            </asp:ContentPlaceHolder>
+            <style>
+                li{
+                    padding:3px;
+                    list-style:none;
+                }
+            </style>
+            <hr />
+         </div>
+
+        <div id="footer">
+            <p>&copy; <%: DateTime.Now.Year %> - Le Moyne College</p>
+        </div>
+            
+        
+
+<!-- Page content -->
+<div class="main">    
+</div>
+
+    </form>
+        </div>
+        </div>
+</body>
+</html>

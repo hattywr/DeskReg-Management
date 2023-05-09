@@ -1,0 +1,626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C8A50255-8E1E-44E0-8A77-307112C34B08}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DeskRegMgmtASP</RootNamespace>
+    <AssemblyName>DeskRegMgmtASP</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44305</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Add_VLAN.aspx" />
+    <Content Include="Confirm_VLAN_delete.aspx" />
+    <Content Include="DeskRegModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DeskRegModel.Context.cs</LastGenOutput>
+      <DependentUpon>DeskRegModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DeskRegModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DeskRegModel.edmx</DependentUpon>
+      <LastGenOutput>DeskRegModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\deskreg_top.jpg" />
+    <Content Include="Images\Edited Seal.png" />
+    <Content Include="Images\Full Colored Seal.png" />
+    <Content Include="Images\LeMoyne_872_web coloring in progress.jpg" />
+    <Content Include="Images\LMCgmg_flush_whGold.png" />
+    <Content Include="Images\Will test images\1000002145.jpg" />
+    <Content Include="Images\Will test images\55a8edbd-a18e-4cf3-9570-827e14249835.jpg" />
+    <Content Include="Images\Will test images\Happy-Dolphins-game-Sea-fish-coral-waves-summer-Wallpaper-HD-for-Desktop-1920x1200-1366x768.jpg" />
+    <Content Include="Images\Will test images\image7081.jpg" />
+    <Content Include="Images\Will test images\image_bd6dc7a8-285e-4efb-b9ea-4bb176c5362720221115_152723.jpg" />
+    <Content Include="Images\Will test images\Screenshot 2022-03-02 at 7.56.34 PM.jpeg" />
+    <Content Include="Images\Will test images\this-is-fine.jpg" />
+    <Content Include="LeMoyneEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LeMoyneEntities.edmx</DependentUpon>
+      <LastGenOutput>LeMoyneEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="LeMoyneEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>LeMoyneEntities.edmx</DependentUpon>
+      <LastGenOutput>LeMoyneEntities.cs</LastGenOutput>
+    </Content>
+    <Content Include="LeMoyneEQ_STATS.aspx" />
+    <Content Include="Modify_VLAN.aspx" />
+    <Content Include="NO_ACCESS.aspx" />
+    <Content Include="RegLeMoyneEQ.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="RegResnetEQ_List.aspx" />
+    <Content Include="RegResnetEQ_SearchUser.aspx" />
+    <Content Include="RegSearchByEventOwner_true.aspx" />
+    <Content Include="RegSearchByMacAd.aspx" />
+    <EntityDeploy Include="DeskRegModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DeskRegModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DeskRegModel.edmx.diagram">
+      <DependentUpon>DeskRegModel.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="LeMoyneEntities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>LeMoyneEntities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="LeMoyneEntities.edmx.diagram">
+      <DependentUpon>LeMoyneEntities.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\DRG WEB PUBLISH.pubxml" />
+    <None Include="Properties\PublishProfiles\GO LIVE PUBLISH %28deskreg-mgmt%29.pubxml" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="RegResnetEQ.aspx" />
+    <Content Include="RegSearchByVLAN.aspx" />
+    <Content Include="RegSearchByVLAN_List.aspx" />
+    <Content Include="RegSearchEQName.aspx" />
+    <Content Include="RegSearchEQName_List.aspx" />
+    <Content Include="RegSearchEventOwner.aspx" />
+    <Content Include="RegSearchEventTarget.aspx" />
+    <Content Include="RegSearchEventTarget_true.aspx" />
+    <Content Include="RegSearchEventTime_true.aspx" />
+    <Content Include="RegSearchEventType.aspx" />
+    <Content Include="RegSearchEventType_true.aspx" />
+    <Content Include="RegSearchUserID_LIST.aspx" />
+    <Content Include="RegSearchUserID_LIST_User.aspx" />
+    <Content Include="RegVlanMgmt.aspx" />
+    <Content Include="Reg_Confirm_Delete.aspx" />
+    <Content Include="ResnetEQ_STATS.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="RegSearchUserID.aspx" />
+    <Content Include="RegSearchEventTime.aspx" />
+    <Content Include="Search_Mac_true.aspx" />
+    <Content Include="Site.Master" />
+    <Content Include="UPDATE_NETWORK_TRUE.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Add_VLAN.aspx.cs">
+      <DependentUpon>Add_VLAN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Add_VLAN.aspx.designer.cs">
+      <DependentUpon>Add_VLAN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Confirm_VLAN_delete.aspx.cs">
+      <DependentUpon>Confirm_VLAN_delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirm_VLAN_delete.aspx.designer.cs">
+      <DependentUpon>Confirm_VLAN_delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeskRegLogic.cs" />
+    <Compile Include="DeskRegModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeskRegModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeskRegModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DeskRegModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeskRegModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_ACTION.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_CONNECTIONTYPE.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_EVENT.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_MAKE.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_MODEL.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_SYSINFO.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_SYSTEMS.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_TYPE.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_USERINFO.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DESKREG_VLAN.cs">
+      <DependentUpon>DeskRegModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EchoAppAdmin.cs">
+      <DependentUpon>LeMoyneEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeMoyneEntities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeMoyneEntities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeMoyneEntities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeMoyneEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LeMoyneEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LeMoyneEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="LeMoyneEQ_STATS.aspx.cs">
+      <DependentUpon>LeMoyneEQ_STATS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LeMoyneEQ_STATS.aspx.designer.cs">
+      <DependentUpon>LeMoyneEQ_STATS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Modify_VLAN.aspx.cs">
+      <DependentUpon>Modify_VLAN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Modify_VLAN.aspx.designer.cs">
+      <DependentUpon>Modify_VLAN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NO_ACCESS.aspx.cs">
+      <DependentUpon>NO_ACCESS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NO_ACCESS.aspx.designer.cs">
+      <DependentUpon>NO_ACCESS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegLeMoyneEQ.aspx.cs">
+      <DependentUpon>RegLeMoyneEQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegLeMoyneEQ.aspx.designer.cs">
+      <DependentUpon>RegLeMoyneEQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegResnetEQ.aspx.cs">
+      <DependentUpon>RegResnetEQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegResnetEQ.aspx.designer.cs">
+      <DependentUpon>RegResnetEQ.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegResnetEQ_List.aspx.cs">
+      <DependentUpon>RegResnetEQ_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegResnetEQ_List.aspx.designer.cs">
+      <DependentUpon>RegResnetEQ_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegResnetEQ_SearchUser.aspx.cs">
+      <DependentUpon>RegResnetEQ_SearchUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegResnetEQ_SearchUser.aspx.designer.cs">
+      <DependentUpon>RegResnetEQ_SearchUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchByEventOwner_true.aspx.cs">
+      <DependentUpon>RegSearchByEventOwner_true.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchByEventOwner_true.aspx.designer.cs">
+      <DependentUpon>RegSearchByEventOwner_true.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchByVLAN.aspx.cs">
+      <DependentUpon>RegSearchByVLAN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchByVLAN.aspx.designer.cs">
+      <DependentUpon>RegSearchByVLAN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchByVLAN_List.aspx.cs">
+      <DependentUpon>RegSearchByVLAN_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchByVLAN_List.aspx.designer.cs">
+      <DependentUpon>RegSearchByVLAN_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchEQName.aspx.cs">
+      <DependentUpon>RegSearchEQName.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchEQName.aspx.designer.cs">
+      <DependentUpon>RegSearchEQName.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchEQName_List.aspx.cs">
+      <DependentUpon>RegSearchEQName_List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchEQName_List.aspx.designer.cs">
+      <DependentUpon>RegSearchEQName_List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchEventOwner.aspx.cs">
+      <DependentUpon>RegSearchEventOwner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchEventOwner.aspx.designer.cs">
+      <DependentUpon>RegSearchEventOwner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchEventTarget.aspx.cs">
+      <DependentUpon>RegSearchEventTarget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchEventTarget.aspx.designer.cs">
+      <DependentUpon>RegSearchEventTarget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchEventTarget_true.aspx.cs">
+      <DependentUpon>RegSearchEventTarget_true.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchEventTarget_true.aspx.designer.cs">
+      <DependentUpon>RegSearchEventTarget_true.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchEventTime_true.aspx.cs">
+      <DependentUpon>RegSearchEventTime_true.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchEventTime_true.aspx.designer.cs">
+      <DependentUpon>RegSearchEventTime_true.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchEventType.aspx.cs">
+      <DependentUpon>RegSearchEventType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchEventType.aspx.designer.cs">
+      <DependentUpon>RegSearchEventType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchEventType_true.aspx.cs">
+      <DependentUpon>RegSearchEventType_true.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchEventType_true.aspx.designer.cs">
+      <DependentUpon>RegSearchEventType_true.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchUserID.aspx.cs">
+      <DependentUpon>RegSearchUserID.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchUserID.aspx.designer.cs">
+      <DependentUpon>RegSearchUserID.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchUserID_LIST.aspx.cs">
+      <DependentUpon>RegSearchUserID_LIST.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchUserID_LIST.aspx.designer.cs">
+      <DependentUpon>RegSearchUserID_LIST.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchUserID_LIST_User.aspx.cs">
+      <DependentUpon>RegSearchUserID_LIST_User.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchUserID_LIST_User.aspx.designer.cs">
+      <DependentUpon>RegSearchUserID_LIST_User.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegVlanMgmt.aspx.cs">
+      <DependentUpon>RegVlanMgmt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegVlanMgmt.aspx.designer.cs">
+      <DependentUpon>RegVlanMgmt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchEventTime.aspx.cs">
+      <DependentUpon>RegSearchEventTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchEventTime.aspx.designer.cs">
+      <DependentUpon>RegSearchEventTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reg_Confirm_Delete.aspx.cs">
+      <DependentUpon>Reg_Confirm_Delete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reg_Confirm_Delete.aspx.designer.cs">
+      <DependentUpon>Reg_Confirm_Delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResnetEQ_STATS.aspx.cs">
+      <DependentUpon>ResnetEQ_STATS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResnetEQ_STATS.aspx.designer.cs">
+      <DependentUpon>ResnetEQ_STATS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search_Mac_true.aspx.cs">
+      <DependentUpon>Search_Mac_true.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search_Mac_true.aspx.designer.cs">
+      <DependentUpon>Search_Mac_true.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="UPDATE_NETWORK_TRUE.aspx.cs">
+      <DependentUpon>UPDATE_NETWORK_TRUE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UPDATE_NETWORK_TRUE.aspx.designer.cs">
+      <DependentUpon>UPDATE_NETWORK_TRUE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>LeMoyneEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="RegSearchByMacAd.aspx.cs">
+      <DependentUpon>RegSearchByMacAd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegSearchByMacAd.aspx.designer.cs">
+      <DependentUpon>RegSearchByMacAd.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>54015</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44305/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

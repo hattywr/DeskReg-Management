@@ -1,0 +1,437 @@
+﻿
+
+#container {
+    width: 100%;
+    margin: 0px auto;
+    background-color:antiquewhite;
+    color: #333;
+    line-height: 130%;
+    border: 2px solid black;
+    list-style: none;
+}
+
+:root {
+    --background: rgba(0, 0, 0, 0);
+    --set_value: 0;
+}
+#container:before {
+    position: fixed;
+    content: '';
+    background: var(--background);
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+#Header {
+    text-align: right;
+    background-color: #006633;
+    color: white;
+    line-height: 2em;
+}
+
+#bannernav {
+    width: 100%;
+    background-color: #D4BF95;
+    border-bottom: 2px solid black;
+    padding-right: 5px;
+}
+
+#bannercontent {
+    width: 100%;
+    height: 7em;
+    /* padding-bottom: 1em; */
+    background-color: #006633;
+    margin-right: 4px;
+}
+
+#Seal{
+    background-color:deeppink;
+}
+
+
+#mainright {
+    float: right;
+  /*  width: 160px;*/
+    margin: 0;
+    padding: 1em;
+    background-color: antiquewhite;
+}
+
+#mainright>img{
+    width:75%;
+
+}
+
+#mainleft {
+    float: left;
+    width: 160px;
+    margin: 0;
+    background-color: antiquewhite;
+    margin-top: 2%;
+}
+
+    #mainleft a {
+       text-align:left;
+       margin-top: 10px;
+       font-size: 12px;
+       padding: 1em;
+       
+    }
+    #mainleft a:hover {
+        color: crimson;
+    }
+#maincenter {
+    margin-left: 200px;
+    border-left: 2px solid gray;
+    margin-right: 200px;
+    border-right: 2px solid gray;
+    border-radius:30px;
+    padding: 1em;
+    max-width: 40em;
+    background-color: floralwhite;
+    list-style:none;
+}
+
+#maincenter a:hover{
+    color:crimson;
+}
+
+#footer {
+    clear: both;
+    margin: 0;
+    padding: 0.5em;
+    color: #333;
+    background-color: #006633;
+    border-top: 2px solid black;
+    color: #ffffff;
+}
+
+.User{
+    background-color:pink;
+}
+
+
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+#body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+   
+}
+
+
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+#container body-content {
+    margin-top:50px;
+    margin-left:50px;
+    margin-right:50px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+        
+    }
+}
+
+
+.MAC_Address_Input_Box {
+    text-align: center;
+    border-width: 1px;
+    border-radius: 15px;
+    height: 25px;
+    width: 200px;
+   /* margin-top: 5px;*/
+    margin-bottom:4px;
+}
+
+.button_style {
+    text-align: center;
+    border-width: 1px;
+    background-color: #007850;
+    border-radius:10px;
+    font-size: 14px;
+    color:white;
+    height: 25px;
+    width: 80px;
+}
+
+.grid_button_style {
+    width: 80px;
+    margin-left: 4px;
+    text-align: center;
+    color: white;
+    background-color: #007850;
+    border-radius: 10px;
+    border-width: 1px;
+    font-size: 12px;
+}
+
+.Table_Style {
+     border-spacing: 4px;
+            border-width:4px;
+            padding:5px;
+            border-color:black;
+            border-style:double;
+display: table;
+    border-radius: 5px;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: #F4C400;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.generic_table_cell {
+    padding: 5px;
+    margin-right: 3px;
+    text-align: center;
+    border-color: #006633;
+    border-spacing: 3px;
+    border-style: solid;
+    border-width: 1px;
+    font-weight:600;
+    
+}
+
+.Left_Cell {
+    padding: 5px;
+    margin-right: 3px;
+    text-align: right;
+    border-color: #006633;
+    border-spacing: 3px;
+    border-style: solid;
+    border-width: 1px;
+    width: 30%;
+}
+
+.Right_Cell {
+    padding: 5px;
+    margin-left: 3px;
+    border-spacing: 3px;
+    text-align: left;
+    border-color: #006633;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.Title {
+    padding: 5px;
+    text-align: center;
+    border-color: #006633;
+    border-spacing: 3px;
+    border-style: solid;
+    border-width: 1px;
+    width: auto;
+    font-weight:bolder;
+    font-family:'Segoe UI Emoji';
+    font-size:larger;
+}
+
+.drop_down {
+    text-align:center;
+    border-width:1px;
+    border-radius:10px;
+    margin-bottom:1px;
+    height:25px;
+    width: 50px;
+    margin-left:1px;
+    margin-right:2px;
+   
+}
+
+.vlan_drop_down {
+    text-align:center;
+    border-width:1px;
+    border-radius:10px;
+    height:25px;
+    width:140px;
+}
+
+.Title1 {
+    padding: 5px;
+    text-align: center;
+    border-color: #006633;
+    border-spacing: 3px;
+    border-style: solid;
+    border-width: 1px;
+    width: auto;
+    font-weight: 600;
+}
+
+.Table_Style {
+    /* border-spacing: 4px;
+            border-width:4px;
+            padding:5px;
+            border-color:black;
+            border-style:double;*/
+    display: table;
+    border-radius: 5px;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: #D4BF95;
+    border-width: 2px;
+    border-style: solid;
+    margin-bottom: 20px;
+}
+
+.Left_Title_Cell1 {
+    font-weight: 600;
+    padding: 5px;
+    margin-right: 3px;
+    text-align: center;
+    border-color: #006633;
+    border-spacing: 3px;
+    border-style: solid;
+    border-width: 1px;
+    width: 25%;
+    color: #006633;
+    text-decoration: underline
+}
+
+.Right__Title_Cell1 {
+    font-weight: 600;
+    padding: 5px;
+    margin-left: 3px;
+    border-spacing: 3px;
+    text-align: center;
+    border-color: #006633;
+    border-width: 1px;
+    border-style: solid;
+    width: 20%;
+    color: #006633;
+    text-decoration: underline;
+   
+}
+
+
+.Left_Cell1 {
+    padding: 5px;
+    margin-right: 3px;
+    text-align: center;
+    border-color: #006633;
+    border-spacing: 3px;
+    border-style: solid;
+    border-width: 1px;
+    width: 30%;
+    text-align: left;
+    font-size: 15px;
+}
+
+.Left_Cell2 {
+    padding: 5px;
+    margin-right: 3px;
+    text-align: center;
+    border-color: #006633;
+    border-spacing: 3px;
+    border-style: solid;
+    border-width: 1px;
+    width: 25%;
+    text-align: left;
+    font-size: 15px;
+    text-decoration: underline;
+}
+
+
+
+.Right_Cell1 {
+    padding: 5px;
+    margin-left: 3px;
+    border-spacing: 3px;
+    text-align: center;
+    border-color: #006633;
+    border-width: 1px;
+    border-style: solid;
+    width: 20%;
+   
+    font-size: 15px;
+}
+
+.Right_Cell2 {
+    padding: 5px;
+    margin-left: 3px;
+    border-spacing: 3px;
+    text-align: center;
+    border-color: #006633;
+    border-width: 1px;
+    border-style: solid;
+    width: 25%;
+    
+    font-size: 15px;
+}
+
+#Flex_Parent {
+    display: flex;
+}
+
+#Flex_Buttons {
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.main_links{
+    text-decoration:underline;
+    display:inline-block;
+    padding:.5em;
+    font-size:15px;
+}
+
+.slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+    }
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background: #063;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+    .slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #04AA6D;
+        cursor: pointer;
+    }

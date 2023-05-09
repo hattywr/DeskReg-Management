@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="LeMoyneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="EchoAppAdmins">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ApplicationID" Type="int" Nullable="false" />
+          <Property Name="ColleagueID" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserPwd" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Birthday" Type="datetime" />
+          <Property Name="NickName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ClassYearID" Type="tinyint" />
+          <Property Name="GenderID" Type="tinyint" />
+          <Property Name="SchoolID" Type="tinyint" />
+          <Property Name="DepartmentID" Type="tinyint" />
+          <Property Name="MajorID" Type="smallint" />
+          <Property Name="MinorID" Type="smallint" />
+          <Property Name="AbmID" Type="int" />
+          <Property Name="RegistrationStatus" Type="bit" Nullable="false" />
+          <Property Name="RegistrationPartner" Type="bit" Nullable="false" />
+          <Property Name="MascotMailFirstTime" Type="bit" Nullable="false" />
+          <Property Name="MascotEmail" Type="bit" Nullable="false" />
+          <Property Name="POPConfig" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="WCPassword" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Title" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="SchoolEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="OtherEmail" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="IsSchoolEmailPreferred" Type="bit" Nullable="false" />
+          <Property Name="PasswordClue" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="WebSiteTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="WebSiteURL" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="ResumeTitle" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ResumeURL" Type="varchar" MaxLength="1024" Nullable="false" />
+          <Property Name="PrivateMask" Type="int" Nullable="false" />
+          <Property Name="AddressTypeID" Type="tinyint" Nullable="false" />
+          <Property Name="AutoApproval" Type="bit" Nullable="false" />
+          <Property Name="MiddleInitial" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="RegistrationCode" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="eCalPassword" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="CoRegSuccessMask" Type="int" Nullable="false" />
+          <Property Name="Timestamps" Type="timestamp" StoreGeneratedPattern="Computed" Nullable="false" />
+          <Property Name="LoginCnt" Type="int" Nullable="false" />
+          <Property Name="TransferToSchool" Type="bit" Nullable="false" />
+          <Property Name="LastModified" Type="datetime" Nullable="false" />
+          <Property Name="ContestCnt" Type="int" Nullable="false" />
+          <Property Name="ReRegistrationStatus" Type="bit" Nullable="false" />
+          <Property Name="ContestSource" Type="tinyint" Nullable="false" />
+          <Property Name="RegistrationDate" Type="datetime" />
+          <Property Name="ParentFName" Type="varchar" MaxLength="30" />
+          <Property Name="ParentLName" Type="varchar" MaxLength="30" />
+          <Property Name="ParentEMail" Type="varchar" MaxLength="50" />
+          <Property Name="UniqueID" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="LeMoyneModelStoreContainer">
+          <EntitySet Name="EchoAppAdmins" EntityType="Self.EchoAppAdmins" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LeMoyneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="EchoAppAdmin">
+          <Key>
+            <PropertyRef Name="AdminID" />
+          </Key>
+          <Property Name="AdminID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ApplicationID" Type="Int32" Nullable="false" />
+          <Property Name="ColleagueID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="LeMoyneEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="EchoAppAdmins" EntityType="Self.EchoAppAdmin" />
+          <EntitySet Name="Users" EntityType="LeMoyneModel.User" />
+        </EntityContainer>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserPwd" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="3" />
+          <Property Name="NickName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ClassYearID" Type="Byte" />
+          <Property Name="GenderID" Type="Byte" />
+          <Property Name="SchoolID" Type="Byte" />
+          <Property Name="DepartmentID" Type="Byte" />
+          <Property Name="MajorID" Type="Int16" />
+          <Property Name="MinorID" Type="Int16" />
+          <Property Name="AbmID" Type="Int32" />
+          <Property Name="RegistrationStatus" Type="Boolean" Nullable="false" />
+          <Property Name="RegistrationPartner" Type="Boolean" Nullable="false" />
+          <Property Name="MascotMailFirstTime" Type="Boolean" Nullable="false" />
+          <Property Name="MascotEmail" Type="Boolean" Nullable="false" />
+          <Property Name="POPConfig" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="WCPassword" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="SchoolEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OtherEmail" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsSchoolEmailPreferred" Type="Boolean" Nullable="false" />
+          <Property Name="PasswordClue" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WebSiteTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="WebSiteURL" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="ResumeTitle" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ResumeURL" Type="String" Nullable="false" MaxLength="1024" FixedLength="false" Unicode="false" />
+          <Property Name="PrivateMask" Type="Int32" Nullable="false" />
+          <Property Name="AddressTypeID" Type="Byte" Nullable="false" />
+          <Property Name="AutoApproval" Type="Boolean" Nullable="false" />
+          <Property Name="MiddleInitial" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="RegistrationCode" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="eCalPassword" Type="Guid" Nullable="false" />
+          <Property Name="CoRegSuccessMask" Type="Int32" Nullable="false" />
+          <Property Name="Timestamps" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="LoginCnt" Type="Int32" Nullable="false" />
+          <Property Name="TransferToSchool" Type="Boolean" Nullable="false" />
+          <Property Name="LastModified" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ContestCnt" Type="Int32" Nullable="false" />
+          <Property Name="ReRegistrationStatus" Type="Boolean" Nullable="false" />
+          <Property Name="ContestSource" Type="Byte" Nullable="false" />
+          <Property Name="RegistrationDate" Type="DateTime" Precision="3" />
+          <Property Name="ParentFName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ParentLName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ParentEMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UniqueID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LeMoyneModelStoreContainer" CdmEntityContainer="LeMoyneEntities">
+          <EntitySetMapping Name="EchoAppAdmins">
+            <EntityTypeMapping TypeName="LeMoyneModel.EchoAppAdmin">
+              <MappingFragment StoreEntitySet="EchoAppAdmins">
+                <ScalarProperty Name="AdminID" ColumnName="AdminID" />
+                <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
+                <ScalarProperty Name="ColleagueID" ColumnName="ColleagueID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="LeMoyneModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="UniqueID" ColumnName="UniqueID" />
+                <ScalarProperty Name="ParentEMail" ColumnName="ParentEMail" />
+                <ScalarProperty Name="ParentLName" ColumnName="ParentLName" />
+                <ScalarProperty Name="ParentFName" ColumnName="ParentFName" />
+                <ScalarProperty Name="RegistrationDate" ColumnName="RegistrationDate" />
+                <ScalarProperty Name="ContestSource" ColumnName="ContestSource" />
+                <ScalarProperty Name="ReRegistrationStatus" ColumnName="ReRegistrationStatus" />
+                <ScalarProperty Name="ContestCnt" ColumnName="ContestCnt" />
+                <ScalarProperty Name="LastModified" ColumnName="LastModified" />
+                <ScalarProperty Name="TransferToSchool" ColumnName="TransferToSchool" />
+                <ScalarProperty Name="LoginCnt" ColumnName="LoginCnt" />
+                <ScalarProperty Name="Timestamps" ColumnName="Timestamps" />
+                <ScalarProperty Name="CoRegSuccessMask" ColumnName="CoRegSuccessMask" />
+                <ScalarProperty Name="eCalPassword" ColumnName="eCalPassword" />
+                <ScalarProperty Name="RegistrationCode" ColumnName="RegistrationCode" />
+                <ScalarProperty Name="MiddleInitial" ColumnName="MiddleInitial" />
+                <ScalarProperty Name="AutoApproval" ColumnName="AutoApproval" />
+                <ScalarProperty Name="AddressTypeID" ColumnName="AddressTypeID" />
+                <ScalarProperty Name="PrivateMask" ColumnName="PrivateMask" />
+                <ScalarProperty Name="ResumeURL" ColumnName="ResumeURL" />
+                <ScalarProperty Name="ResumeTitle" ColumnName="ResumeTitle" />
+                <ScalarProperty Name="WebSiteURL" ColumnName="WebSiteURL" />
+                <ScalarProperty Name="WebSiteTitle" ColumnName="WebSiteTitle" />
+                <ScalarProperty Name="PasswordClue" ColumnName="PasswordClue" />
+                <ScalarProperty Name="IsSchoolEmailPreferred" ColumnName="IsSchoolEmailPreferred" />
+                <ScalarProperty Name="OtherEmail" ColumnName="OtherEmail" />
+                <ScalarProperty Name="SchoolEmail" ColumnName="SchoolEmail" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="WCPassword" ColumnName="WCPassword" />
+                <ScalarProperty Name="POPConfig" ColumnName="POPConfig" />
+                <ScalarProperty Name="MascotEmail" ColumnName="MascotEmail" />
+                <ScalarProperty Name="MascotMailFirstTime" ColumnName="MascotMailFirstTime" />
+                <ScalarProperty Name="RegistrationPartner" ColumnName="RegistrationPartner" />
+                <ScalarProperty Name="RegistrationStatus" ColumnName="RegistrationStatus" />
+                <ScalarProperty Name="AbmID" ColumnName="AbmID" />
+                <ScalarProperty Name="MinorID" ColumnName="MinorID" />
+                <ScalarProperty Name="MajorID" ColumnName="MajorID" />
+                <ScalarProperty Name="DepartmentID" ColumnName="DepartmentID" />
+                <ScalarProperty Name="SchoolID" ColumnName="SchoolID" />
+                <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+                <ScalarProperty Name="ClassYearID" ColumnName="ClassYearID" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="UserPwd" ColumnName="UserPwd" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
