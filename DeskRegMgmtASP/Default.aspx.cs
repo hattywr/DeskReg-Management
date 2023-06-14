@@ -23,16 +23,16 @@ namespace DeskRegMgmtASP
             //retrieve username
             Session["username"] = username;
             //authentication for app
-            LeMoyneEntities LE = new LeMoyneEntities();
+            //LeMoyneEntities LE = new LeMoyneEntities();
 
-            string ColleagueID = (from elem in LE.Users
-                                  where elem.UserName == username
-                                  select elem.UniqueID).FirstOrDefault();
+            //string ColleagueID = (from elem in LE.Users
+            //                      where elem.UserName == username
+            //                      select elem.UniqueID).FirstOrDefault();
 
-            if (true) // user does not have access // This if else was the authentication logic which allowed users which had been authenticated already use the application.
-            {
-                Response.Redirect("No_ACCESS.aspx");
-            }
+            //if (true) // user does not have access // This if else was the authentication logic which allowed users which had been authenticated already use the application.
+            //{
+            //    Response.Redirect("No_ACCESS.aspx");
+            //}
         }
 
         // Buttons to take user's to requested page
